@@ -1,0 +1,382 @@
+/* Full-width input fields */
+/* base line code from  https://www.w3schools.com/howto/howto_css_login_form.asp*/
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.imgcontainer {
+    margin: 24px 0 12px 0;
+    position:relative;
+}
+img.avatar {
+  /* sets up the log in avatar control */
+    width: 40%;
+    border-radius: 50%;
+}
+/* Set a style for all buttons */
+
+button:hover {
+  opacity: 0.8;
+}
+
+.App-row-1 {
+/* looks broken but helps set up the columns on the main page. Removing this breaks things in a way I am not sure how to fix so I am keeping it. */
+}
+
+.App-row-2 {
+
+}
+
+.grid-parent-grid {
+    display: grid;
+    gap:10px;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-parent-row {
+    display: table-row;
+    grid-template-columns: repeat(4, 5fr);
+}
+
+.grid-parent-row-2 {
+    display: table-row;
+    grid-template-columns: repeat(4, 5fr);
+}
+
+
+
+
+.containerm {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu content"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  gap: 3px;
+  background-color: dodgerblue;
+  padding: 5px;
+}
+.containerm div {
+  background-color: white;
+  padding: 10px;
+}
+.containerm div.header {
+  grid-area: header;
+  text-align: center;
+}
+.containerm div.menu {
+  grid-area: menu;
+}
+.containerm div.content {
+  grid-area: content;
+}
+.containerm div.footer {
+  grid-area: footer;
+  text-align: center;  
+}
+
+.button1 {
+  /* originally used for the close app button in early stages. Can not remember if I actually used it anywhere. */
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+
+
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+
+.child { 
+  /* was a test div I used to make sure things were lining up in the early stages before I figured out the application box. Not used in the actual Code*/
+  background: red;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 50;
+}
+
+.child:hover {
+  opacity: 0.8;
+}
+
+
+
+
+body { 
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: #00309C
+    /* controls the main body and background */
+}
+
+div#menu {
+    height: 25px;
+    flex: none;
+    color: black;
+    /* the top menu bar for the site */
+}
+/* controls the top menu items on the window */
+div#menu .menu-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 5px;
+    padding-left: 5px;
+    cursor:default;
+    color:black;
+    border-left: 1px solid #f7f7ff
+}
+
+div#mainArea {
+    /* controls the main view port for the window */
+    flex: 1;
+    display: flex;
+    flex-direction:row; /* has the main box be after the rows */
+    min-height: 0; /* for firefox largely */
+}
+
+
+
+
+
+div#content {
+  /* the main content screen on the site. */
+    flex: 1;
+    background-color: #272727;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px 10px;
+    overflow: auto;
+
+}
+
+
+div#statusBarMS {
+  /* variant of the original status bar */
+    height: 40px;
+    flex: none;
+    background-color:beige;
+    border-top: 1px solid #0A0B3B;
+}
+div#statusBarMS i {
+    float: right;
+    margin-right: 10px;
+    color: #F7F7FF;
+    line-height: 20px;
+    font-size: large;
+}
+
+div#statusBarMS-1 {
+    height: 40px;
+    flex: none;
+    background-color:#0164f9;;
+    border-top: 1px solid #0A0B3B;
+}
+div#statusBarMS-1 i {
+    float: right;
+    margin-right: 10px;
+    color: #F7F7FF;
+    line-height: 20px;
+    font-size: large;
+}
+
+/* The following code controls the Application boxes on the main screen. */
+/* This took two days on its own somehow, I reversed enginered this code from the combined broken corpse's of a dozen lost threads. */
+/* I spent so long on the windows alone, I could have spent that time somewhere else. */
+.app-window-1 {
+  /* first part of the app windows controls the main box */
+  width: 400px;
+  border: 2px solid #888;
+  border-radius: 4px;
+  box-shadow: 0 3px 7px rgba(0,0,0.2);
+  background-color: #F7F7FF;
+
+}
+
+.app-title-bar-1 {
+  background-color: #0164f9;
+  color: white;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.app-content-1 {
+  /* controls the content in the main box of the applicatio windows */
+  padding: 12px;
+  font-size: 12px;
+  color: #0A0B3B;
+}
+
+.app-window-2 {
+  width: 400px;
+  border: 2px solid #888;
+  border-radius: 4px;
+  box-shadow: 0 3px 7px rgba(0,0,0.2);
+  background-color: #F7F7FF;
+}
+
+.app-title-bar-2 {
+  background-color: #0164f9;
+  color: white;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.app-content-2 {
+  padding: 12px;
+  font-size: 12px;
+  color: #0A0B3B;
+}
+
+.app-window-3 {
+  width: 400px;
+  border: 2px solid #888;
+  border-radius: 4px;
+  box-shadow: 0 3px 7px rgba(0,0,0.2);
+  background-color: #F7F7FF;
+}
+
+.app-title-bar-3 {
+  background-color: #0164f9;
+  color: white;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.app-content-3 {
+  padding: 12px;
+  font-size: 12px;
+  color: #0A0B3B;
+}
+
+
+/* proceding styling is based off the code for a windows xp loarder. Link to the original here: https://codepen.io/pulkitsvm/pen/KWZEKW */
+
+.window-l{
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+ 
+}
+.container-l{
+  /* The loading bar. */
+  width: 150px;
+  height: 10px;
+  border: 2px solid #b2b2b2;
+  border-radius: 7px;
+  margin: 0 auto;
+  padding: 2px 1px;
+  overflow: hidden;
+  font-size: 0;
+}
+.box-l{
+  /* the box's that move through to indicate the loading animation. */
+  width: 9px;
+  height: 100%;
+  background: linear-gradient(to bottom, #2838c7 0%,#5979ef 17%,#869ef3 32%,#869ef3 45%,#5979ef 59%,#2838c7 100%);
+  display: inline-block;
+  margin-right: 2px;
+  animation: loader 2s infinite;
+  animation-timing-function: linear;
+}
+
+
+.logo-l{
+  width: 220px;
+  margin: 50px auto
+}
+/* The logo classes help Format the spacing between both the words and letters. */
+.logo-l p{
+  margin: 0;
+  padding: 0;  
+}
+.top-l{
+  /* controls the top portion of the logo. */
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 16px;
+}
+
+.mid-l{
+  /* controls the middle portion of the logo. */
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 36px;  
+}
+.mid-l span{
+  font-size: 22px;
+  display: inline-block;
+  vertical-align: top;
+  color: #FF6821;
+  margin-top: -8px;
+}
+.logo-l .bottom-l{
+  /* controls the BOTTOM part of the logo. */
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 30px;
+  margin-left: 5px;
+  
+}
+@keyframes loader{
+  /* I won't lie, I spent half I day trying to learn what this does cause I hate the idea of just copying things online.*/
+/* controls the way the boxes in the loader move by having them change size every frame, I think thats how to describe it at least. */
+  0%{
+    transform: translate(-30px);
+  }
+  100%{
+    transform: translate(150px);
+  }
+}

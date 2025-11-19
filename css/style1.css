@@ -1,0 +1,123 @@
+/* This sheet is largly for the "application pages" they use different colours than the other main pages and when I tried to change it at first it broke more things than it fixed. So in my tired state I decided a seperate css sheet would work better than spending 5 minutes organizing.*/
+
+html {
+    height: 100%;
+}
+
+body { 
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: wheat;
+    /* controls the main body and background */
+}
+img.animated-gif{
+  width: 100%;
+  height: 100%;
+}
+
+.child { 
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 300px;
+}
+.button1 {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 1px 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 1px 3px;
+  cursor: pointer;
+}
+
+div#menu {
+    height: 30px;
+    flex: none;
+}
+/* controls the top menu items on the window */
+div#menu .menu-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 5px;
+    padding-left: 5px;
+    cursor:default;
+    color:blueviolet;
+    border-left: 1px solid #f7f7ff
+}
+
+div#mainArea {
+    /* controls the main view port for the window */
+    flex: 1;
+    display: flex;
+    flex-direction:row; /* has the main box be after the rows */
+    min-height: 0; /* for firefox largely */
+}
+
+div#sidebar {
+    /* controls the apperance of the side bar menu */
+    width: 200px;
+    flex: none;
+    background: #7C7eb2;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+div#sidebar .sidebar-header {
+    background-color: black;
+    padding-left: 10ox;
+    color:white;
+    line-height: 50px;
+    margin: 0px;
+    font-size: normal;
+
+}
+
+div#sidebar ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0;
+    font-size: normal;
+}
+
+div#sidebar ul li {
+    line-height: 35px;
+    padding-left: 30px;
+    border-bottom: 1px dashed #0A0B3B;
+    color: #F7F7FF;
+}
+
+div#sidebar ul li.active {
+    background-color: #f7f7ff;
+    color: #333577;
+}
+
+div#content {
+    flex: 1;
+    background-color: #f7f7ff;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px 10px;
+    overflow: auto;
+
+}
+
+div#statusBar {
+    height: 20px;
+    flex: none;
+    background-color:beige;
+    border-top: 1px solid #0A0B3B;
+}
+div#statusBar i {
+    float: right;
+    margin-right: 10px;
+    color: #F7F7FF;
+    line-height: 20px;
+    font-size: large;
+}
